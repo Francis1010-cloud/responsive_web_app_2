@@ -1,0 +1,86 @@
+:root {
+    --heading-font: "Roboto", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+    --app-green:#2dc997;
+    --default-font:"Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
+.title-nav{
+    font-size: 29px;
+}
+
+
+.navigation-container{
+    padding: 21px 63px;
+    font-weight: 600;
+}
+
+.title-container{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1.5), rgba(0, 0, 0, 0.1)),url('images/mountain_background.jpg');
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+.header-button{
+    box-shadow: 0px 0px 0px 2px rgba(255,255,255,0.3);
+    width: fit-content;
+    padding: 6px 25px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    margin-top: 20px;
+}
+
+.navigation-menu{
+    font-size: 15px;  
+    display: inline-flex;
+}
+
+.center-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.menu-icon{
+    display: none;
+    font-size: x-large;
+}
+.about-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem 6rem;
+    column-gap: 35px;
+}
+.about-tile{
+    font-weight:bold ;
+}
+.bi{
+    font-size: 50px;
+    color: var(--app-green);
+}
+
+
+@media only screen and (max-width: 990px){
+    .about-container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media only screen and (max-width: 1200px){
+    .navigation-menu{
+        display: none;
+        background-color: blue;
+    }
+    .menu-icon{
+        display: flex;
+    }
+}
+
+
+
