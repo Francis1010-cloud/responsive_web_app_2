@@ -4,6 +4,7 @@
     --app-green:#2dc997;
     --app-lightgrey:#d3d3d3;
     --default-color: #666666;
+    --background-color: #474d52;
     --default-font:"Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
 }
 
@@ -15,6 +16,7 @@
 .navigation-container{
     padding: 21px 63px;
     font-weight: 600;
+    transition: 0.7s;
 }
 
 .title-container{
@@ -166,12 +168,12 @@ p{
     box-shadow: 2px 2px 4px var(--app-lightgrey);
 
 }
-.image-style{
+.product-card-container .image-style{
     cursor: pointer;
     transition: transform .3s;
     /* transform: scale(0.9); */
 }
-.image-style:hover{
+.product-card-container .image-style:hover{
     transform: scale(1.1);
 }
 .product-card div{
