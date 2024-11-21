@@ -2,13 +2,13 @@
     --heading-font: "Roboto", sans-serif;
     --nav-font: "Poppins", sans-serif;
     --app-green:#2dc997;
-    --app-lightgrey:#f9f9f9;
+    --app-lightgrey:#d3d3d3;
     --default-color: #666666;
     --default-font:"Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
 }
 
 .title-nav{
-    font-size: 29px;
+    font-size: 26px;
 }
 
 
@@ -22,6 +22,7 @@
     color: white;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
     background-size: cover;
     height: 100vh;
     position: relative;
@@ -92,10 +93,9 @@
 }
 p{
     color:var(--default-color) ;
-    /* font-weight: bold; */
 }
 .service-card{
-    border: 1px solid #666666;
+    border: 1px solid var(--app-lightgrey);
     padding: 50px 30px;
     position: relative;
 }
@@ -110,11 +110,13 @@ p{
     width: fit-content;
     padding: 0.5rem;
     position: absolute;
-    top: -26px;
+    top: -33px;
     left: calc(50% - 36px);
     background: var(--app-green);
     border-radius: 50%;
+    border: 9px solid white;
 }
+
 .call-action-container{
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 1.5), rgba(0, 0, 0, 0.1)),url('images/cta-bg.jpg');
     background-repeat: no-repeat;
@@ -122,9 +124,9 @@ p{
     background-attachment: fixed;
     background-size: cover;
     color: white;
-    padding: 5rem;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
+    padding: 8rem 4rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
 }
 
 .action-button{
@@ -134,6 +136,46 @@ p{
     border-radius: 50px;
     font-weight: 500;
     font-size: 18px;
+    margin-top: 2rem;
+}
+.portfolio-product-container{
+    text-align: center;
+}
+.portfolio-product-container .product-tab{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    column-gap: 19px;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--default-color);
+}
+
+.portfolio-product-container .product-card-container{
+    display: grid;
+    /* padding: 20px 50px; */
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 1rem
+}
+.product-card-container .content{
+    padding: 1rem;
+    text-align: left;
+}
+.product-card-container .product-card{
+    box-shadow: 2px 2px 4px var(--app-lightgrey);
+
+}
+.image-style{
+    cursor: pointer;
+    transition: transform .3s;
+    /* transform: scale(0.9); */
+}
+.image-style:hover{
+    transform: scale(1.1);
+}
+.product-card div{
+    overflow: hidden;
 }
 
 
@@ -147,6 +189,13 @@ p{
     }
     .count-container{
         grid-template-columns: repeat(2,1fr);
+    }
+    .call-action-container{
+        text-align: center;
+        grid-template-columns: 1fr; 
+    }    
+    .portfolio-product-container .product-card-container{
+        grid-template-columns: repeat(2,1fr);; 
     }
     
 }
@@ -163,11 +212,18 @@ p{
     .service-list{
         grid-template-columns: repeat(2,1fr);
     }
+    .portfolio-product-container .product-tab{
+        font-size: 14px;
+    }
+
 }
 
 @media only screen and (max-width: 770px){
     .service-list{
         grid-template-columns: 1fr
+    }
+        .portfolio-product-container .product-card-container{
+        grid-template-columns: 1fr; 
     }
 
 }
