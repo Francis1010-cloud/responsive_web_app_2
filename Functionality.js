@@ -17,6 +17,38 @@ function scrollFunction(e) {
     }else{
         element.style.background="none";
     }
+    
+
+    let abt = document.querySelector(".about-container");
+    let navElement= document.getElementById("ABOUT");
+    const rect1 = abt.getBoundingClientRect();
+
+    if (rect1.top == 68) {
+
+                let allLinks = document.querySelectorAll('.menu-bar a');
+                allLinks.forEach(link => link.classList.remove('selected'));
+                navElement.classList.add('selected');
+    }
+
+    let service = document.querySelector(".service-container");
+    let navElements = document.getElementById("SERVICES");
+    const rect2 = service.getBoundingClientRect();
+
+    if (rect2.top >124 && rect2.top < 130) {
+        let allLinks = document.querySelectorAll('.menu-bar a');
+        allLinks.forEach(link => link.classList.remove('selected'));
+        navElements.classList.add('selected');
+    }
+
+
+}
+
+function isElementInView(element) {
+    // Get the element's bounding rectangle
+    const rect = element?.getBoundingClientRect();
+    
+    // Check if the element is within the viewport
+    return rect?.top >= 0 && rect?.bottom <= window.innerHeight;
 }
 
 function sectionNavigate(clickedLink) {;
@@ -65,8 +97,6 @@ function tabSelect(clickedLink,event,key){
 
 
         let elements = document.getElementsByClassName("product-card-container");  
-        console.log(elements[0].getElementsByClassName("product-card")) 
-
         let productCards = elements[0].getElementsByClassName("product-card");
        
         // Loop through each product card
