@@ -51,6 +51,11 @@ function tabSelect(clickedLink,event,key){
         case "branding":
             item = ".brand-item";
             break;
+
+        case "books":
+            item = ".book-item";
+            break;
+
         
         default:
         console.log("default");
@@ -67,9 +72,24 @@ function tabSelect(clickedLink,event,key){
         // Loop through each product card
 for (let i = 0; i < productCards.length; i++) {
     let classNames = productCards[i].classList;
-    console.log(classNames[1]); 
+    let itemElement = document.getElementsByClassName(classNames[1]);
+    if(key == "all"){
+       
+            displayFunctionality("block",itemElement);
+
+    }else{
+        if(item.split(".")[1] != classNames[1]){
+                displayFunctionality("none",itemElement);
+        }else{
+            displayFunctionality("block",itemElement);
+        }
+    }
+
+    }     
 }
 
-      
-      
-  }
+function displayFunctionality(displayProp,itemElement){
+    for(let i = 0; i < itemElement.length; i++){
+        itemElement[i].style.display = displayProp;
+    }
+}

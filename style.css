@@ -193,6 +193,12 @@ p{
 .product-card div{
     overflow: hidden;
 }
+.product-card{
+    /* transition: 1s;
+    transform: scale(0.0001);
+    transition-duration: 0.4s;
+    transition-delay: 0ms; */
+}
 
 /* Style for the selected link */
 .menu-bar a.selected {
@@ -201,6 +207,9 @@ p{
 
 .product-tab a.selected{
     color: var(--app-green);
+}
+.product-tab a{
+    cursor: pointer;
 }
 
 .team-card-container{
@@ -255,6 +264,19 @@ p{
 .twitter-icon :hover{
     color: var(--app-green);
     background-color: white;
+}
+.team-card .member-info .desigination{
+    position: relative;
+}
+.team-card .member-info .desigination::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: var(--app-green);
+    bottom: 0;
+    left: 0;
 }
 
 @keyframes lineanimate {
