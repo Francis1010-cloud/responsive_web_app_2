@@ -63,13 +63,13 @@
 .about-tile{
     font-weight:bold ;
 }
-.bi{
+.about-container .bi{
     font-size: 2.6rem;
     color: var(--app-green);
 }
 
 .service-icon .bi{
-    width: 2.4rem;
+    width: 2.8rem;
     font-size: 25px;
     color: white;
 }
@@ -100,10 +100,11 @@ p{
     border: 1px solid var(--app-lightgrey);
     padding: 50px 30px;
     position: relative;
+    cursor: pointer;
 }
 .service-list{
     display: grid;
-    gap: 2rem;
+    gap: 2.8rem;
     padding: 2rem;
     margin-top: 2rem;    
     grid-template-columns: repeat(3,1fr);
@@ -113,10 +114,23 @@ p{
     padding: 0.5rem;
     position: absolute;
     top: -33px;
-    left: calc(50% - 36px);
+    left: calc(50% - 30px);
     background: var(--app-green);
     border-radius: 50%;
-    border: 9px solid white;
+    border: 2px solid white;
+    transition: ease-in-out 0.3s;
+    height: 3.9rem;
+}
+.service-card:hover .text-2xl{
+        color: var(--app-green);
+        cursor: pointer;
+}
+.service-card:hover .service-icon{
+    background: white;
+    border: 2px solid var(--app-green);
+}
+.service-card:hover .service-icon .bi{
+    color: var(--app-green);
 }
 
 .call-action-container{
@@ -180,6 +194,73 @@ p{
     overflow: hidden;
 }
 
+/* Style for the selected link */
+.menu-bar a.selected {
+    border-bottom: 2px solid var(--app-green);
+}
+
+.product-tab a.selected{
+    color: var(--app-green);
+}
+
+.team-card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 4rem;
+}
+.team-card-container .team-card{
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+    gap: 1.5rem;
+    transition: 0.7s;
+    grid-template-columns: 1fr 2fr;
+}
+
+.team-card-container .team-card :hover{
+    /* transform: translateY(-10px); */
+}
+
+.team-card-container .member-info{
+    text-align: left;
+    line-height: 2rem;
+}
+.team-card-container  .member-picture img{
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+}
+
+.team-card-container  .member-picture{
+    display: flex;
+    justify-content: center;
+}
+
+.member-info div{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--default-color);
+}
+
+.team-card-container .bi{
+    color: gray;
+    background-color: color-mix(in srgb, var(--default-color), transparent 94%);
+    width: fit-content;
+    height: fit-content;
+    padding: 0px 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.twitter-icon :hover{
+    color: var(--app-green);
+    background-color: white;
+}
+
+@keyframes lineanimate {
+    
+}
+
 
 @media only screen and (max-width: 1200px){
     .navigation-menu{
@@ -199,7 +280,9 @@ p{
     .portfolio-product-container .product-card-container{
         grid-template-columns: repeat(2,1fr);; 
     }
-    
+    .team-card-container{
+        grid-template-columns: repeat(2,1fr);
+    }
 }
 
 
@@ -217,6 +300,9 @@ p{
     .portfolio-product-container .product-tab{
         font-size: 14px;
     }
+    .team-card-container{
+        grid-template-columns: 1fr; 
+    }
 
 }
 
@@ -227,8 +313,15 @@ p{
         .portfolio-product-container .product-card-container{
         grid-template-columns: 1fr; 
     }
+    .team-card-container .team-card{
+        grid-template-columns: 1fr; 
+    }
+    .team-card-container .member-info{
+        text-align: center;
+    }
 
 }
+
 
 
 
