@@ -169,7 +169,7 @@ p{
 
 .portfolio-product-container .product-card-container{
     display: grid;
-    /* padding: 20px 50px; */
+    padding: 20px 50px;
     gap: 2rem;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 1rem
@@ -279,6 +279,30 @@ p{
     left: 0;
 }
 
+.contact-container .contact-details{
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    padding: 4rem;
+}
+.contact-container .contact-icon{
+    text-align: left;
+}
+
+.contact-container input{
+    border: 1px solid var(--app-lightgrey);
+    padding: 5px;
+}
+
+.contact-container .contact-input{
+    display: grid;
+    grid-template-areas: "name-input email-input"
+                        "subject-input subject-input"
+                        "message-input message-input";
+                        gap: 1.5rem;
+                        grid-template-rows: 2.8rem 2.8rem 9rem;
+}
+
+
 @keyframes lineanimate {
     
 }
@@ -325,6 +349,9 @@ p{
     .team-card-container{
         grid-template-columns: 1fr; 
     }
+    .contact-container .contact-details{
+        grid-template-columns: 1fr;
+    }
 
 }
 
@@ -340,6 +367,12 @@ p{
     }
     .team-card-container .member-info{
         text-align: center;
+    }
+    .contact-container .contact-input{
+        grid-template-areas: "name-input name-input"
+        "email-input email-input"
+                            "subject-input subject-input"
+                            "message-input message-input";
     }
 
 }
