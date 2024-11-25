@@ -43,7 +43,9 @@
 .navigation-menu{
     font-size: 15px;  
     display: inline-flex;
-    
+    padding: 0px;
+    background: none;
+    color: white;
 }
 
 .center-content{
@@ -61,6 +63,7 @@
     grid-template-columns: 1fr 1fr;
     padding: 3rem;
     column-gap: 35px;
+    margin-top: 3rem;
 }
 .about-tile{
     font-weight:bold ;
@@ -363,7 +366,7 @@ p{
 }
 
 .modal{
-    display: block;
+    display: none;
 }
 
 
