@@ -15,6 +15,8 @@ function OpenMenu(){
     for(let i=0;i<list.length;i++){
         list[i].style.marginBlock ="1rem";
     }
+
+    modelclick();
 }
 
 
@@ -137,3 +139,30 @@ function displayFunctionality(displayProp,itemElement){
         itemElement[i].style.display = displayProp;
     }
 }
+
+
+function closeModal(){
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
+
+setTimeout(() => {
+    var modal = document.getElementById("myModal");
+ modelclick = () =>{
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+// span.onclick = () => {
+//   modal.style.display = "none";
+// }
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick =(event)=> {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+}, 2000);
+

@@ -43,6 +43,7 @@
 .navigation-menu{
     font-size: 15px;  
     display: inline-flex;
+    
 }
 
 .center-content{
@@ -293,6 +294,8 @@ p{
 .contact-container input{
     border: 1px solid var(--app-lightgrey);
     padding: 5px;
+    transition: 0.2s;
+    outline: none;
 }
 
 .contact-container .contact-input{
@@ -302,6 +305,14 @@ p{
                         "message-input message-input";
                         gap: 1.5rem;
                         grid-template-rows: 2.2rem 2.2rem 9rem;
+}
+
+.contact-container input:focus {
+    border: 1.2px solid var(--app-green);
+}
+.contact-container input::placeholder {
+    /* color: #ee2a7b; */
+    top: 0px;
 }
 
 .footer-container .bi{
@@ -325,6 +336,9 @@ p{
     color: white;
 }
 
+.social-info .bi{
+    transition: 0.5s;
+}
 
 .social-info .bi:nth-child(1):hover{
     background-color: #1DA1F2;
@@ -344,12 +358,24 @@ p{
     
 }
 
+.modal .close{
+    display: none;
+}
+
+.modal{
+    display: block;
+}
+
 
 @media only screen and (max-width: 1200px){
     .navigation-menu{
         display: none;
         background-color: blue;
     }
+    .modal .close{
+        display: block;
+    }
+    
     .menu-icon{
         display: block;
     }
@@ -366,6 +392,38 @@ p{
     .team-card-container{
         grid-template-columns: repeat(2,1fr);
     }
+    /* sample */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
 }
 
 
@@ -414,8 +472,6 @@ p{
     }
 
 }
-
-
 
 
 
