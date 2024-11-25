@@ -1,9 +1,23 @@
+
+window.onscroll = function(e) {scrollFunction(e)};
+
+
 function OpenMenu(){
-    
+    let navbar = document.getElementsByClassName("navigation-menu");
+    navbar[0].style.display = "Block";
+    navbar[0].style.zIndex = 1;
+    navbar[0].style.width = '100%';
+    navbar[0].style.color = "Black";
+    navbar[0].style.borderRadius = '7px';
+    navbar[0].style.background = "white";
+    navbar[0].style.padding = "1.2rem";
+    let list = navbar[0].getElementsByTagName("li");
+    for(let i=0;i<list.length;i++){
+        list[i].style.marginBlock ="1rem";
+    }
 }
 
 
-window.onscroll = function(e) {scrollFunction(e)};
 
 function scrollFunction(e) {    
     let element = document.getElementById("navbar");

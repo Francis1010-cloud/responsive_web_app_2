@@ -5,7 +5,8 @@
     --app-lightgrey:#d3d3d3;
     --default-color: #666666;
     --background-color: #474d52;
-    --default-font:"Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+    --default-font:"Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --app-footer-bg:#2f3942;
 }
 
 .title-nav{
@@ -180,6 +181,7 @@ p{
 }
 .product-card-container .product-card{
     box-shadow: 2px 2px 4px var(--app-lightgrey);
+    transition: 0.10s;
 
 }
 .product-card-container .image-style{
@@ -251,7 +253,7 @@ p{
     color: var(--default-color);
 }
 
-.team-card-container .bi{
+.icon-container .bi{
     color: gray;
     background-color: color-mix(in srgb, var(--default-color), transparent 94%);
     width: fit-content;
@@ -299,7 +301,42 @@ p{
                         "subject-input subject-input"
                         "message-input message-input";
                         gap: 1.5rem;
-                        grid-template-rows: 2.8rem 2.8rem 9rem;
+                        grid-template-rows: 2.2rem 2.2rem 9rem;
+}
+
+.footer-container .bi{
+    padding: 0.2rem 0.5rem ;
+    background-color: var(--app-green);
+    color:white;
+}
+.footer-container{
+    color: white;
+    background: var(--app-footer-bg);
+    padding: 1.4rem 2rem;
+}
+
+.footer-container p{
+    color:white;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.social-info .bi:hover{
+    color: white;
+}
+
+
+.social-info .bi:nth-child(1):hover{
+    background-color: #1DA1F2;
+}
+.social-info .bi:nth-child(2):hover{
+    background-color: #1877F2;
+}
+.social-info .bi:nth-child(3):hover{
+    background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+}
+.social-info .bi:nth-child(4):hover{
+    background-color: #0072b1;
 }
 
 
@@ -314,7 +351,7 @@ p{
         background-color: blue;
     }
     .menu-icon{
-        display: flex;
+        display: block;
     }
     .count-container{
         grid-template-columns: repeat(2,1fr);
@@ -373,6 +410,7 @@ p{
         "email-input email-input"
                             "subject-input subject-input"
                             "message-input message-input";
+                            grid-template-rows: 2.2rem 2.2rem 2.2rem  9rem;
     }
 
 }
