@@ -4,9 +4,16 @@
     --app-green:#2dc997;
     --app-lightgrey:#d3d3d3;
     --default-color: #666666;
-    --default-font:"Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+    --background-color: #474d52;
+    --default-font:"Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --app-footer-bg:#2f3942;
 }
 
+
+html {
+    scroll-behavior: smooth;
+  }
+  
 .title-nav{
     font-size: 26px;
 }
@@ -15,6 +22,7 @@
 .navigation-container{
     padding: 21px 63px;
     font-weight: 600;
+    transition: 0.7s;
 }
 
 .title-container{
@@ -40,6 +48,9 @@
 .navigation-menu{
     font-size: 15px;  
     display: inline-flex;
+    padding: 0px;
+    background: none;
+    color: white;
 }
 
 .center-content{
@@ -57,17 +68,18 @@
     grid-template-columns: 1fr 1fr;
     padding: 3rem;
     column-gap: 35px;
+    margin-top: 3rem;
 }
 .about-tile{
     font-weight:bold ;
 }
-.bi{
+.about-container .bi{
     font-size: 2.6rem;
     color: var(--app-green);
 }
 
 .service-icon .bi{
-    width: 2.4rem;
+    width: 2.8rem;
     font-size: 25px;
     color: white;
 }
@@ -98,10 +110,11 @@ p{
     border: 1px solid var(--app-lightgrey);
     padding: 50px 30px;
     position: relative;
+    cursor: pointer;
 }
 .service-list{
     display: grid;
-    gap: 2rem;
+    gap: 2.8rem;
     padding: 2rem;
     margin-top: 2rem;    
     grid-template-columns: repeat(3,1fr);
@@ -111,10 +124,23 @@ p{
     padding: 0.5rem;
     position: absolute;
     top: -33px;
-    left: calc(50% - 36px);
+    left: calc(50% - 30px);
     background: var(--app-green);
     border-radius: 50%;
-    border: 9px solid white;
+    border: 2px solid white;
+    transition: ease-in-out 0.3s;
+    height: 3.9rem;
+}
+.service-card:hover .text-2xl{
+        color: var(--app-green);
+        cursor: pointer;
+}
+.service-card:hover .service-icon{
+    background: white;
+    border: 2px solid var(--app-green);
+}
+.service-card:hover .service-icon .bi{
+    color: var(--app-green);
 }
 
 .call-action-container{
@@ -153,7 +179,7 @@ p{
 
 .portfolio-product-container .product-card-container{
     display: grid;
-    /* padding: 20px 50px; */
+    padding: 20px 50px;
     gap: 2rem;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 1rem
@@ -164,19 +190,208 @@ p{
 }
 .product-card-container .product-card{
     box-shadow: 2px 2px 4px var(--app-lightgrey);
+    transition: 0.10s;
 
 }
-.image-style{
+.product-card-container .image-style{
     cursor: pointer;
     transition: transform .3s;
     /* transform: scale(0.9); */
 }
-.image-style:hover{
+.product-card-container .image-style:hover{
     transform: scale(1.1);
 }
 .product-card div{
     overflow: hidden;
 }
+.product-card{
+    /* transition: 1s;
+    transform: scale(0.0001);
+    transition-duration: 0.4s;
+    transition-delay: 0ms; */
+}
+
+/* Style for the selected link */
+.menu-bar a.selected {
+    border-bottom: 2px solid var(--app-green);
+    transition: all 0.1s ease;
+}
+
+
+
+.product-tab a.selected{
+    color: var(--app-green);
+}
+.product-tab a{
+    cursor: pointer;
+}
+
+.team-card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 4rem;
+}
+.team-card-container .team-card{
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+    gap: 1.5rem;
+    transition: 0.7s;
+    grid-template-columns: 1fr 2fr;
+}
+
+.team-card-container .team-card :hover{
+    /* transform: translateY(-10px); */
+}
+
+.team-card-container .member-info{
+    text-align: left;
+    line-height: 2rem;
+}
+.team-card-container  .member-picture img{
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+}
+
+.team-card-container  .member-picture{
+    display: flex;
+    justify-content: center;
+}
+
+.member-info div{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--default-color);
+}
+
+.icon-container .bi{
+    color: gray;
+    background-color: color-mix(in srgb, var(--default-color), transparent 94%);
+    width: fit-content;
+    height: fit-content;
+    padding: 0px 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.twitter-icon :hover{
+    color: var(--app-green);
+    background-color: white;
+}
+.team-card .member-info .desigination{
+    position: relative;
+}
+.team-card .member-info .desigination::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: var(--app-green);
+    bottom: 0;
+    left: 0;
+}
+
+.contact-container .contact-details{
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    padding: 4rem;
+}
+.contact-container .contact-icon{
+    text-align: left;
+}
+
+.contact-container input{
+    border: 1px solid var(--app-lightgrey);
+    padding: 5px;
+    transition: 0.2s;
+    outline: none;
+}
+
+.contact-container .contact-input{
+    display: grid;
+    grid-template-areas: "name-input email-input"
+                        "subject-input subject-input"
+                        "message-input message-input";
+                        gap: 1.5rem;
+                        grid-template-rows: 2.2rem 2.2rem 9rem;
+}
+
+.contact-container input:focus {
+    border: 1.2px solid var(--app-green);
+}
+.contact-container input::placeholder {
+    /* color: #ee2a7b; */
+    top: 0px;
+}
+
+.footer-container .bi{
+    padding: 0.2rem 0.5rem ;
+    background-color: var(--app-green);
+    color:white;
+}
+.footer-container{
+    color: white;
+    background: var(--app-footer-bg);
+    padding: 1.4rem 2rem;
+}
+
+.footer-container p{
+    color:white;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.social-info .bi:hover{
+    color: white;
+}
+
+.social-info .bi{
+    transition: 0.5s;
+}
+
+.social-info .bi:nth-child(1):hover{
+    background-color: #1DA1F2;
+}
+.social-info .bi:nth-child(2):hover{
+    background-color: #1877F2;
+}
+.social-info .bi:nth-child(3):hover{
+    background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+}
+.social-info .bi:nth-child(4):hover{
+    background-color: #0072b1;
+}
+
+
+@keyframes lineanimate {
+    
+}
+
+.modal .close{
+    display: none;
+}
+
+.modal{
+    display: none;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid var(--app-green);
+    border-bottom: 16px solid var(--app-green);
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
 
 @media only screen and (max-width: 1200px){
@@ -184,8 +399,12 @@ p{
         display: none;
         background-color: blue;
     }
+    .modal .close{
+        display: block;
+    }
+    
     .menu-icon{
-        display: flex;
+        display: block;
     }
     .count-container{
         grid-template-columns: repeat(2,1fr);
@@ -197,7 +416,41 @@ p{
     .portfolio-product-container .product-card-container{
         grid-template-columns: repeat(2,1fr);; 
     }
-    
+    .team-card-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    /* sample */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
 }
 
 
@@ -205,6 +458,7 @@ p{
     .about-container{
         display: grid;
         grid-template-columns: 1fr;
+        margin-top: 0px;
     }
     .count-container{
         grid-template-columns: 1fr;
@@ -214,6 +468,12 @@ p{
     }
     .portfolio-product-container .product-tab{
         font-size: 14px;
+    }
+    .team-card-container{
+        grid-template-columns: 1fr; 
+    }
+    .contact-container .contact-details{
+        grid-template-columns: 1fr;
     }
 
 }
@@ -225,9 +485,21 @@ p{
         .portfolio-product-container .product-card-container{
         grid-template-columns: 1fr; 
     }
+    .team-card-container .team-card{
+        grid-template-columns: 1fr; 
+    }
+    .team-card-container .member-info{
+        text-align: center;
+    }
+    .contact-container .contact-input{
+        grid-template-areas: "name-input name-input"
+        "email-input email-input"
+                            "subject-input subject-input"
+                            "message-input message-input";
+                            grid-template-rows: 2.2rem 2.2rem 2.2rem  9rem;
+    }
 
 }
-
 
 
 
