@@ -214,7 +214,10 @@ p{
 /* Style for the selected link */
 .menu-bar a.selected {
     border-bottom: 2px solid var(--app-green);
+    transition: all 0.1s ease;
 }
+
+
 
 .product-tab a.selected{
     color: var(--app-green);
@@ -374,6 +377,22 @@ p{
     display: none;
 }
 
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid var(--app-green);
+    border-bottom: 16px solid var(--app-green);
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 
 @media only screen and (max-width: 1200px){
     .navigation-menu{
@@ -439,6 +458,7 @@ p{
     .about-container{
         display: grid;
         grid-template-columns: 1fr;
+        margin-top: 0px;
     }
     .count-container{
         grid-template-columns: 1fr;

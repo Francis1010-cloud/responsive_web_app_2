@@ -151,6 +151,8 @@ function closeModal(){
 }
 
 
+
+
 setTimeout(() => {
     var modal = document.getElementById("myModal");
  modelclick = () =>{
@@ -180,11 +182,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   
       // Scroll to the target element, with offset for navbar height
       window.scrollTo({
-        top: targetElement.offsetTop - document.querySelector('.navigation-menu').offsetHeight - 85,
+        top: targetElement.offsetTop  - 95,
         behavior: 'smooth'
       });
     });
 });
-
 }, 2000);
 
