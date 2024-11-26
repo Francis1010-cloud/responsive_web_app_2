@@ -20,7 +20,7 @@ html {
 
 
 .navigation-container{
-    padding: 21px 63px;
+    padding: 21px 38px;
     font-weight: 600;
     transition: 0.7s;
 }
@@ -283,15 +283,20 @@ p{
     position: relative;
 }
 .team-card .member-info .desigination::after{
-    content: "";
+    content: '';
     position: absolute;
-    display: block;
-    width: 50px;
-    height: 1px;
-    background: var(--app-green);
     bottom: 0;
-    left: 0;
+    left: 15px;
+    transform: translateX(-50%); /* Centers the line */
+    width: 10%; /* Adjust the width of the line */
+    height: 1px; /* Height of the line */
+    background-color: var(--app-green);
+    opacity: 0.5;
 }
+
+
+
+
 
 .contact-container .contact-details{
     display: grid;
@@ -495,7 +500,7 @@ p{
         grid-template-columns: 1fr;
     }
     .team-card .member-info .desigination::after{
-        left: 40%;
+        left: 50%;
     }
     .team-card-container .team-card{
         grid-template-columns: 1fr; 
