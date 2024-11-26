@@ -25,23 +25,23 @@
                     <div class="modal-content">
                       <span class="close" onclick="closeModal()">&times;</span>
                         <ul class="navigation-menu gap-10 items-center">
-                        <li class="menu-bar"><a id="HOME" class="selected" href="#main-section" onclick="sectionNavigate(this)" >HOME</a></li>
-                        <li class="menu-bar"><a id="ABOUT" href="#about-section" onclick="sectionNavigate(this)" >ABOUT</a></li>
-                        <li class="menu-bar"><a id="SERVICES" href="#service-section" onclick="sectionNavigate(this)" >SERVICES</a></li>
+                        <li class="menu-bar"><a id="HOME" class="selected" href="#main-section" onclick="sectionNavigate(this,'about-section')" >HOME</a></li>
+                        <li class="menu-bar"><a id="ABOUT" href="#about-section" onclick="sectionNavigate(this,'about-section')" >ABOUT</a></li>
+                        <li class="menu-bar"><a id="SERVICES" href="#service-section" onclick="sectionNavigate(this,'about-section')" >SERVICES</a></li>
                         <li class="menu-bar"><a id="PORTFOLIO" href="#portfolio-section" onclick="sectionNavigate(this)" >PORTFOLIO</a></li>
-                        <li class="menu-bar"><a id="TEAM" href="" onclick="sectionNavigate()" >TEAM</a></li>
-                        <li class="menu-bar"><a id="CONTACT" href=""onclick="sectionNavigate()">CONTACT</a></li>
+                        <li class="menu-bar"><a id="TEAM" href="#team-section" onclick="sectionNavigate(this)">TEAM</a></li>
+                        <li class="menu-bar"><a id="CONTACT" href="#contact-section" onclick="sectionNavigate(this)">CONTACT</a></li>
                     </ul>
                     </div>
                   
                   </div>
                   <ul class="navigation-menu gap-10 items-center">
-                    <li class="menu-bar"><a id="HOME" class="selected" href="#main-section" onclick="sectionNavigate(this)" >HOME</a></li>
-                    <li class="menu-bar"><a id="ABOUT" href="#about-section" onclick="sectionNavigate(this)" >ABOUT</a></li>
-                    <li class="menu-bar"><a id="SERVICES" href="#service-section" onclick="sectionNavigate(this)" >SERVICES</a></li>
-                    <li class="menu-bar"><a id="PORTFOLIO" href="#portfolio-section" onclick="sectionNavigate(this)" >PORTFOLIO</a></li>
-                    <li class="menu-bar"><a id="TEAM" href="" onclick="sectionNavigate()" >TEAM</a></li>
-                    <li class="menu-bar"><a id="CONTACT" href=""onclick="sectionNavigate()">CONTACT</a></li>
+                    <li class="menu-bar"><a id="HOME" class="selected" href="#main-section" onclick="sectionNavigate(this,'main-section')" >HOME</a></li>
+                    <li class="menu-bar"><a id="ABOUT" href="#about-section" onclick="sectionNavigate(this,'about-section')" >ABOUT</a></li>
+                    <li class="menu-bar"><a id="SERVICES" href="#service-section" onclick="sectionNavigate(this,'service-section')" >SERVICES</a></li>
+                    <li class="menu-bar"><a id="PORTFOLIO" href="#portfolio-section" onclick="sectionNavigate(this,'portfolio-section')" >PORTFOLIO</a></li>
+                    <li class="menu-bar"><a id="TEAM" href="#team-section" onclick="sectionNavigate(this,'team-section')" >TEAM</a></li>
+                    <li class="menu-bar"><a id="CONTACT" href="#contact-section" onclick="sectionNavigate(this,'contact-section')">CONTACT</a></li>
                 </ul>
 
               
@@ -321,7 +321,7 @@
                 </div>
             </div>
         </div>
-        <div class="contact-container text-center mt-20">
+        <div class="contact-container text-center mt-20" id="contact-section">
             <h2  class="title-nav about-tile mt-10">CONTACT</h2>
             <p class="mt-3">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
             <div class="contact-details">

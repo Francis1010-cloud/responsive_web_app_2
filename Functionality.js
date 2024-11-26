@@ -35,26 +35,26 @@ function scrollFunction(e) {
     }
     
 
-    let abt = document.querySelector(".about-container");
-    let navElement= document.getElementById("ABOUT");
-    const rect1 = abt.getBoundingClientRect();
+    // let abt = document.querySelector(".about-container");
+    // let navElement= document.getElementById("ABOUT");
+    // const rect1 = abt.getBoundingClientRect();
 
-    if (rect1.top == 68) {
+    // if (rect1.top == 68) {
 
-                let allLinks = document.querySelectorAll('.menu-bar a');
-                allLinks.forEach(link => link.classList.remove('selected'));
-                navElement.classList.add('selected');
-    }
+    //             let allLinks = document.querySelectorAll('.menu-bar a');
+    //             allLinks.forEach(link => link.classList.remove('selected'));
+    //             navElement.classList.add('selected');
+    // }
 
-    let service = document.querySelector(".service-container");
-    let navElements = document.getElementById("SERVICES");
-    const rect2 = service.getBoundingClientRect();
+    // let service = document.querySelector(".service-container");
+    // let navElements = document.getElementById("SERVICES");
+    // const rect2 = service.getBoundingClientRect();
 
-    if (rect2.top >124 && rect2.top < 130) {
-        let allLinks = document.querySelectorAll('.menu-bar a');
-        allLinks.forEach(link => link.classList.remove('selected'));
-        navElements.classList.add('selected');
-    }
+    // if (rect2.top >124 && rect2.top < 130) {
+    //     let allLinks = document.querySelectorAll('.menu-bar a');
+    //     allLinks.forEach(link => link.classList.remove('selected'));
+    //     navElements.classList.add('selected');
+    // }
 
 
 }
@@ -67,14 +67,18 @@ function isElementInView(element) {
     return rect?.top >= 0 && rect?.bottom <= window.innerHeight;
 }
 
-function sectionNavigate(clickedLink) {;
+function sectionNavigate(clickedLink,divContainer) {
     // Remove 'selected' class from all links
     let allLinks = document.querySelectorAll('.menu-bar a');
     allLinks.forEach(link => link.classList.remove('selected'));
 
     // Add 'selected' class to the clicked link
     clickedLink.classList.add('selected');
+
+    let container = document.getElementById(divContainer);
 }
+
+
 
 function tabSelect(clickedLink,event,key){
         event.preventDefault();
@@ -153,16 +157,34 @@ setTimeout(() => {
     modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
-// span.onclick = () => {
-//   modal.style.display = "none";
-// }
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick =(event)=> {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
+
+
+///navbar 
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {    
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+  
+      const targetId = this.getAttribute('href').substring(1);  // Get the target section id
+      const targetElement = document.getElementById(targetId);
+
+      console.log("ta",targetElement.offsetTop - document.querySelector('.navigation-menu').offsetHeight);
+      
+  
+      // Scroll to the target element, with offset for navbar height
+      window.scrollTo({
+        top: targetElement.offsetTop - document.querySelector('.navigation-menu').offsetHeight - 85,
+        behavior: 'smooth'
+      });
+    });
+});
+
 }, 2000);
 

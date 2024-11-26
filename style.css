@@ -9,6 +9,11 @@
     --app-footer-bg:#2f3942;
 }
 
+
+html {
+    scroll-behavior: smooth;
+  }
+  
 .title-nav{
     font-size: 26px;
 }
