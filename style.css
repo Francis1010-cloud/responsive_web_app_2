@@ -405,6 +405,7 @@ p{
     
     .menu-icon{
         display: block;
+        align-content: center;
     }
     .count-container{
         grid-template-columns: repeat(2,1fr);
